@@ -4,16 +4,21 @@ import Car from './Car/Car.js';
 
 class App extends Component{
 
-	state = {
-		cars: [
-			{name: 'Ford', year: '2018'},
-			{name: 'Audi', year: '2016'},
-			{name: 'Mazda', year: '2010'}
-		],
-		pageTitle: 'React Components',
-		showCars: false
+	constructor(props) {
+		super(props)
+
+		this.state =  {
+			cars: [
+				{name: 'Ford', year: '2018'},
+				// {name: 'Audi', year: '2016'},
+				// {name: 'Mazda', year: '2010'}
+			],
+			pageTitle: 'React Components',
+			showCars: false
+		}
 	}
 
+	
 	// changeHandleInput = (event) => {
 	// 	this.setState({
 	// 		pageTitle: event.target.value
@@ -51,7 +56,16 @@ class App extends Component{
 		})
 	}
 
+	componentWillMount() {
+		console.log('App componentWillMount')
+	}
+
+	componentDidMount() {
+		console.log('App componentDidMount')
+	}
+
 	render() {
+		console.log('App render')
 		const divStyle = {
 			textAlign: 'center'
 		}
@@ -73,7 +87,8 @@ class App extends Component{
 
 		return (
 		<div style={divStyle}>
-			<h1>{this.state.pageTitle}</h1>
+			{/*<h1>{this.state.pageTitle}</h1>*/}
+			<h1>{this.props.title}</h1>
 
 			<button onClick={this.toogleCarsHandler}>Toogle Cars</button>
 			<div style={{
