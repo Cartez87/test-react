@@ -1,21 +1,25 @@
 
 .Car {
     transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    /* border: 1px solid #ccc; */
+    border: 1px solid #ccc;
     margin: 20px;
     display: inline-flex;
     flex-direction: column;
     padding: 10px;
-    /* box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14); */
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14);
     border-radius: 6px;
+    cursor: pointer,
 }
 
-.input {
-
+.Car:hover {
+    border-color: #aaa;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, .25);
 }
+
+.input {}
 
 .input:focus {
-    outline: none
+    /* outline: none */
 }
 
 .input.green {
